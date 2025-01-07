@@ -5,10 +5,12 @@ spring MVC 프로젝트를 사용하여 Create, Read, Update, Delete 기능을 �
 ## 프로젝트 기간
 2025.01.01 ~ 2025.01.07
 
-## 구현
-### 게시판 페이지
+## DB 테이블
 ![image](https://github.com/user-attachments/assets/83881c3b-7a59-478b-9203-5dac4e5a55d5)
 이 테이블은 게시판 기능에서 사용되며, 게시글 번호, 제목, 내용, 작성자, 작성일, 수정일을 저장합니다.
+
+## 구현
+### 게시판 페이지
 ![image](https://github.com/user-attachments/assets/cb448515-82f9-4f5f-b4ea-0d73389ffefb)
 게시판 페이지에선 게시글 등록, 게시글 목록 확인, 검색 기능을 이용할 수 있습니다.
 ### 게시글 검색 기능
