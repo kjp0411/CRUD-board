@@ -7,7 +7,14 @@ spring MVC 프로젝트를 사용하여 Create, Read, Update, Delete 기능을 �
 
 ## 구현
 ### 게시판 페이지
-![image](https://github.com/user-attachments/assets/cdcf2522-b4b6-4038-905c-cdc797e94d3e)
+![image](https://github.com/user-attachments/assets/83881c3b-7a59-478b-9203-5dac4e5a55d5)
+이 테이블은 게시판 기능에서 사용되며, 게시글 번호, 제목, 내용, 작성자, 작성일, 수정일을 저장합니다.
+![image](https://github.com/user-attachments/assets/cb448515-82f9-4f5f-b4ea-0d73389ffefb)
+게시판 페이지에선 게시글 등록, 게시글 목록 확인, 검색 기능을 이용할 수 있습니다.
+### 게시글 검색 기능
+![image](https://github.com/user-attachments/assets/6e171e1a-113e-4c2b-835a-2d9fd8e1045f)
+검색 기능에선 여러 옵션을 통해 사용자가 원하는 게시물을 검색할 수 있도록 필터링 기능을 적용하였습니다.
+![image](https://github.com/user-attachments/assets/6d38bcb2-304d-4d04-a2fd-cc177024dd20)
 ### 게시글 등록 기능
 ![image](https://github.com/user-attachments/assets/e34d9ca5-799a-427a-bd28-94e092b09376)
 ### 등록된 게시글 확인 기능
