@@ -20,4 +20,3 @@ spring MVC 프로젝트를 사용하여 Create, Read, Update, Delete 기능을 �
 ![image](https://github.com/user-attachments/assets/6d73481b-ba57-42b6-8c12-2c91af1e4b0a)
 ### 게시글 삭제 기능 
 ![image](https://github.com/user-attachments/assets/4fb6b5ae-5c92-4405-a1e2-ba954fc17055)
-![image](https://github.com/user-attachments/assets/e602ac36-5330-408e-b813-891dcc773170)
