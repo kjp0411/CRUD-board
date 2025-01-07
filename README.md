@@ -52,3 +52,9 @@ spring MVC 프로젝트를 사용하여 Create, Read, Update, Delete 기능을 �
 ![image](https://github.com/user-attachments/assets/4fb6b5ae-5c92-4405-a1e2-ba954fc17055)
 
 삭제 버튼을 누르게 되면 게시판 페이지로 이동을 하며 게시판 페이지에서 게시글이 정상적으로 삭제된 것을 확인할 수 있도록 구현하였습니다.
+
+## 페이지네이션 기능 구현
+![image](https://github.com/user-attachments/assets/8255cbcc-a65d-4736-a755-0b26b283c09c)
+![image](https://github.com/user-attachments/assets/6f030579-5ecb-474d-ba67-2da102d284da)
+
+게시글은 한 페이지당 10개씩 출력되도록 구현하였으며 다른 페이지로 이동시 pagenum의 파라미터 값이 변경되게 구현하였습니다.
