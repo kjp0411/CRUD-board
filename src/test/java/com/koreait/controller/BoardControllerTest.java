@@ -8,6 +8,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
@@ -38,18 +39,53 @@ public class BoardControllerTest {
 		mvc = MockMvcBuilders.webAppContextSetup(wac).build();
 	}
 	
+//	@Test
+//	public void listTest() throws Exception{
+//		//mvc.perform(요청)	: 해당 요청대로 mockmvc가 수행
+//		//MockMvcRequestBuilders.get("/board/list") : /board/list 로 get방식의 요청!
+//		ModelAndView mav = mvc.perform(MockMvcRequestBuilders.get("/board/list"))
+//		.andReturn()		//반환된 결과 : 응답(뷰, 모델 등 을 포함)
+//		.getModelAndView();	//응답에서 모델과 뷰를 포함하고 있는 타입의 객체 받기
+//		
+//		log.info(mav.getModelMap());
+//		log.info(mav.getViewName());
+//	}
+	
+//	@Test
+//	public void getTest() throws Exception{
+//		ModelAndView mav = mvc.perform(
+//			MockMvcRequestBuilders.get("/board/get")
+//				.param("pagenum", "2")
+//				.param("amount", "10")
+//				.param("boardnum", "1")
+//				
+//		).andReturn().getModelAndView();
+//		
+//		log.info(mav.getModelMap());
+//		log.info(mav.getViewName());
+//	}
+	
 	@Test
-	public void listTest() throws Exception{
-		//mvc.perform(요청)	: 해당 요청대로 mockmvc가 수행
-		//MockMvcRequestBuilders.get("/board/list") : /board/list 로 get방식의 요청!
-		ModelAndView mav = mvc.perform(MockMvcRequestBuilders.get("/board/list"))
-		.andReturn()		//반환된 결과 : 응답(뷰, 모델 등 을 포함)
-		.getModelAndView();	//응답에서 모델과 뷰를 포함하고 있는 타입의 객체 받기
+	public void modifyTest() throws Exception{
+		MvcResult result = mvc.perform(
+			MockMvcRequestBuilders.post("/board/modify")
+				.param("boardnum", "1")
+				.param("boardtitle", "수정된 게시글 제목")
+				.param("boardcontents", "수정된 게시글 내용")
+				.param("boardwriter", "apple")
+				.param("amount", "10")
+				.param("pagenum", "3")
+					
+		).andReturn();
 		
+		ModelAndView mav = result.getModelAndView();
+		
+//		ModelMap은 Flash 영역은 나오지 않는다.
 		log.info(mav.getModelMap());
 		log.info(mav.getViewName());
+		log.info(result.getFlashMap());
+		
 	}
-	
 }
 
 

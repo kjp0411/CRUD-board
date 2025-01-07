@@ -29,15 +29,20 @@ public class BoardServiceTest {
 //		Criteria cri = new Criteria();
 //		log.info(service.getTotal(cri));
 //	}
+//	@Test
+//	public void registTest() {
+//		BoardDTO board = new BoardDTO();
+//		board.setBoardtitle("service 테스트로 만든 게시글");
+//		board.setBoardcontents("의미없는 내용/ 집에 갑시다");
+//		board.setBoardwriter("durian");
+//		service.regist(board);
+//	}
 	@Test
-	public void registTest() {
-		BoardDTO board = new BoardDTO();
-		board.setBoardtitle("service 테스트로 만든 게시글");
-		board.setBoardcontents("의미없는 내용/ 집에 갑시다");
-		board.setBoardwriter("durian");
-		service.regist(board);
+	public void getTest() {
+		
+		BoardDTO board = service.get(1L);
+		log.info(board);
 	}
-	
 }
 
 

@@ -11,4 +11,10 @@ public interface BoardService {
 	public int getTotal(Criteria cri);
 	
 	public void regist(BoardDTO board);
+	
+	public BoardDTO get(Long boardnum);
+
+	public boolean modify(BoardDTO board);
+
+	public boolean remove(Long boardnum);
 }

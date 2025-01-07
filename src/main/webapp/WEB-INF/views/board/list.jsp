@@ -75,7 +75,7 @@
 									<c:forEach items="${list}" var="board">
 										<tr>
 											<td>${board.boardnum }</td>
-											<td><a href="#">${board.boardtitle }</a></td>
+											<td><a class="get" href="${board.boardnum}">${board.boardtitle }</a></td>
 											<td>${board.boardwriter }</td>
 											<td>${board.regdate }</td>
 											<td>${board.updatedate }</td>
@@ -147,6 +147,15 @@
 <script>
 	const searchForm = $("#searchForm");
 	const pageForm = $("#pageForm");
+	
+	$(".get").on("click",function(e){
+		e.preventDefault();	
+					   //<input type='hidden' name='boardnum' value='			123			 '>
+		pageForm.append("<input type='hidden' name='boardnum' value='"+$(this).attr("href")+"'>");
+		pageForm.attr("action","/board/get");
+		pageForm.submit();
+	})
+	
 	$("#searchForm a").on("click",function(e){
 		if(!searchForm.find("option:selected").val()){
 			alert("검색 기준을 선택하세요.");
@@ -173,11 +182,23 @@
 	//$(document).ready(함수) : 문서가 로딩이 완료되면 건네주는 함수 호출 
 	$(document).ready(
 		function(){
-			if(result == '' || history.state){
+			if(wn == '' || history.state){
 				return;
 			}
 			if(parseInt(wn) > 0){
 				alert(wn+"번 게시글이 등록되었습니다.");
+				history.replaceState({},null,null);
+			}
+		}
+	)
+	mn = "${mn}";
+	$(document).ready(
+		function(){
+			if(mn == '' || history.state){
+				return;
+			}
+			if(parseInt(mn) > 0){
+				alert(mn+"번 게시글이 수정되었습니다.");
 				history.replaceState({},null,null);
 			}
 		}

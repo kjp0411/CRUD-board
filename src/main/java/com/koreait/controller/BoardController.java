@@ -46,6 +46,29 @@ public class BoardController {
 		//redirect: 접두어를 사용하게 되면 스프링 MVC가 자동으로 redirect로 처리해준다.
 		return "redirect:/board/list";
 	}
+	//아래의 메소드는 /get이나 /modify인 경우에 호출되는데
+	//그 때 호출하는 uri대로 view를 찾을 것이다.
+	//즉 /get으로 요청해서 호출됐다면 get.jsp를, /modify로 요청해서 호출됐다면 modify.jsp를 찾게된다.
+	@GetMapping({"/get","/modify"})
+	public void get(Long boardnum, @ModelAttribute("cri") Criteria cri, Model model) {
+		model.addAttribute("board", service.get(boardnum));
+	}
+	
+	@PostMapping("/modify")
+	public String modify(BoardDTO board, Criteria cri, RedirectAttributes ra) {
+		if(service.modify(board)) {
+			ra.addFlashAttribute("mn",board.getBoardnum());
+		}
+		return "redirect:/board/list"+cri.getListLink();
+	}
+	
+	@PostMapping("/remove")
+	public String remove(Long boardnum, Criteria cri, RedirectAttributes ra) {
+		if(service.remove(boardnum)) {
+			ra.addFlashAttribute("rn", boardnum);
+		}
+		return "redirect:/board/list"+cri.getListLink();
+	}
 }
 
 
